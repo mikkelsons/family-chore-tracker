@@ -30,7 +30,7 @@ Try the live app: [Family Chore Tracker](https://mikkelsons-family-chore-tracker
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/chore-tracker.git
+   git clone https://github.com/mikkelsons/family-chore-tracker.git
    cd chore-tracker
    ```
 
