@@ -1,0 +1,62 @@
+import { useState } from "react";
+import Button from "./Button";
+import "../Modal.css";
+
+export default function AddUserModal({ onAddUser, onClose }) {
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
+
+  function handleChange(e) {
+    setName(e.target.value);
+    setError("");
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (name.trim() === "") {
+      setError("Name is required");
+      return;
+    }
+
+    const newUser = {
+      id: crypto.randomUUID(),
+      name: name.trim(),
+      image: `https://api.dicebear.com/9.x/thumbs/svg?seed=${encodeURIComponent(
+        name.trim()
+      )}`,
+      currentChores: [],
+      currentPoints: 0,
+    };
+
+    console.log("Adding new user:", newUser);
+    onAddUser(newUser);
+    onClose();
+  }
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal">
+        <h2>Add New Family Member</h2>
+        <form onSubmit={handleSubmit} noValidate>
+          <label>
+            Name:
+            <input
+              type="text"
+              value={name}
+              onChange={handleChange}
+              required
+              placeholder="Enter name"
+            />
+          </label>
+          {error && <p className="error">{error}</p>}
+          <div className="modal-actions">
+            <Button type="button" onClick={onClose}>
+              Cancel
+            </Button>
+            <Button type="submit">Add User</Button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
