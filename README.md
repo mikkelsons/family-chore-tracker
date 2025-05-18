@@ -1,14 +1,12 @@
 # Family Chore Tracker
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)](https://app.netlify.com/sites/your-site/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4f3feb4d-7121-4746-81ff-1c43d978cb97/deploy-status)](https://app.netlify.com/projects/mikkelsons-family-chore-tracker/deploys)
 
 The **Family Chore Tracker** is a React-based web application designed to help families manage household chores. Parents can assign tasks to family members, track progress, and reward completed chores with points. The app is functional for basic chore management but is under active development to add persistent data storage and enhanced user management.
 
 ## Demo
 
-Try the live app: [Family Chore Tracker](https://chore-tracker.netlify.app)
-
-![App Screenshot](./screenshots/chore-tracker.png)
+Try the live app: [Family Chore Tracker](https://mikkelsons-family-chore-tracker.netlify.app/)
 
 ## Features
 
