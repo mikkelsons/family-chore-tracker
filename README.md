@@ -31,7 +31,7 @@ Try the live app: [Family Chore Tracker](https://mikkelsons-family-chore-tracker
 
    ```bash
    git clone https://github.com/mikkelsons/family-chore-tracker.git
-   cd chore-tracker
+   cd family-chore-tracker
    ```
 
 2. Install dependencies
