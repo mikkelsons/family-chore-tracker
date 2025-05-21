@@ -18,6 +18,11 @@ Try the live app: [Family Chore Tracker](https://mikkelsons-family-chore-tracker
 - **User Management**: Add family members (fix in progress) and view user-specific chore lists.
 - **Responsive UI**: Clean, modal-based interface for adding chores and users.
 
+### To Do:
+
+- Add option for adding/deleting users
+- Add option for redeeming points (only accesible by parent)
+
 ## Installation
 
 ### Prerequisites
