@@ -50,10 +50,12 @@ export default function AddUserModal({ onAddUser, onClose }) {
           </label>
           {error && <p className="error">{error}</p>}
           <div className="modal-actions">
-            <Button type="button" onClick={onClose}>
+            <Button type="button" onClick={onClose} className="button-delete">
               Cancel
             </Button>
-            <Button type="submit">Add User</Button>
+            <Button type="submit" className="button-add">
+              Add User
+            </Button>
           </div>
         </form>
       </div>

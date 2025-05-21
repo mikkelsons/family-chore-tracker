@@ -46,10 +46,12 @@ export default function PasswordModal({ onConfirm, onCancel }) {
           <h3>During developement password is 1111</h3>
           {error && <p className="error">{error}</p>}
           <div className="modal-actions">
-            <Button type="button" onClick={onCancel}>
+            <Button type="button" onClick={onCancel} className="button-delete">
               Cancel
             </Button>
-            <Button type="submit">Login</Button>
+            <Button type="submit" className="button-add">
+              Login
+            </Button>
           </div>
         </form>
       </div>
