@@ -18,6 +18,7 @@ export default function Chore({
   let actionButtonText = "";
   let actionButtonAction = null;
   let showDeleteButton = false;
+  let buttonClassName = "";
 
   if (currentUser) {
     // Case 1: In UserChoreList, show "Mark as Done" for "To Do" chores for the current user
@@ -25,6 +26,7 @@ export default function Chore({
       if (chore.status === "To Do") {
         showActionButton = true;
         actionButtonText = "Mark as Done";
+        buttonClassName = "button-to-do";
         actionButtonAction = () => onMarkAsDone(chore.id);
       }
     }
@@ -34,6 +36,7 @@ export default function Chore({
       if (chore.status === "Pending") {
         showActionButton = true;
         actionButtonText = "Approve";
+        buttonClassName = "button-approve";
         actionButtonAction = () => onApprove(chore.id);
       }
       if (chore.status === "Done") {
@@ -64,7 +67,7 @@ export default function Chore({
       <div className="chore-actions">
         {showActionButton && (
           <Button
-            className="chore-button"
+            className={buttonClassName}
             onClick={(e) => {
               e.stopPropagation();
               actionButtonAction();
@@ -75,7 +78,7 @@ export default function Chore({
         )}
         {showDeleteButton && (
           <Button
-            className="chore-button delete-button"
+            className="button-delete"
             onClick={(e) => {
               e.stopPropagation();
               onDeleteChore(chore.id);

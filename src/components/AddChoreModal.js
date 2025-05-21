@@ -68,10 +68,12 @@ export default function AddChoreModal({ family, onAddChore, onClose }) {
             </select>
           </label>
           <div className="modal-actions">
-            <Button type="button" onClick={onClose}>
+            <Button type="button" onClick={onClose} className="button-delete">
               Cancel
             </Button>
-            <Button type="submit">Add Chore</Button>
+            <Button type="submit" className="button-add">
+              Add Chore
+            </Button>
           </div>
         </form>
       </div>
