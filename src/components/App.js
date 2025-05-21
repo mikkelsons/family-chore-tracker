@@ -141,6 +141,7 @@ export default function App() {
           {(currentUser?.name === "Mom" || currentUser?.name === "Dad") && (
             <>
               <Button
+                className="button-add"
                 onClick={() => {
                   setIsAddChoreModalOpen(true);
                 }}

@@ -128,18 +128,6 @@ footer {
   gap: 0.8rem;
 }
 
-.chore-button {
-  justify-self: end;
-  align-self: center;
-  padding: 0.5rem 1rem;
-  border: none;
-  background-color: #d70654;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
 .chore-list {
   display: flex;
   flex-direction: column;
@@ -183,7 +171,7 @@ li p {
   flex-direction: column;
 }
 
-.button {
+.button-delete {
   justify-self: end;
   align-self: center;
   padding: 0.5rem 1rem;
@@ -192,6 +180,40 @@ li p {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.button-add {
+  justify-self: end;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #9fc448;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-approve {
+  justify-self: end;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #b8d576;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-to-do {
+  justify-self: end;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #ffc400;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .done {
