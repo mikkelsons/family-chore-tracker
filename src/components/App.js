@@ -7,7 +7,6 @@ import Title from "./Title";
 import Button from "./Button";
 import MenuModal from "./MenuModal";
 import PasswordModal from "./PasswordModal";
-// import AddUserModal from "./AddUserModal";
 
 export default function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -20,12 +19,12 @@ export default function App() {
   const [pendingUser, setPendingUser] = useState(null);
 
   function handleSwitchUser(familyMember) {
-    // If selecting Mom or Dad, open password modal
+    // If selecting admin, open password modal
     if (familyMember.isAdmin) {
       setPendingUser(familyMember);
       setIsPasswordModalOpen(true);
     } else {
-      // For non-parents, set user directly
+      // For non-admins, set user directly
       setCurrentUser((current) =>
         current?.id === familyMember.id ? null : familyMember
       );
@@ -120,10 +119,6 @@ export default function App() {
     setFamily((prevFamily) => [...prevFamily, member]);
   }
 
-  // function handleAddUser(newUser) {
-  //   setFamily((prevFamily) => [...prevFamily, newUser]);
-  // }
-
   return (
     <div>
       <Header
@@ -152,13 +147,6 @@ export default function App() {
               >
                 Menu
               </Button>
-              {/* <Button
-                onClick={() => {
-                  setIsAddUserModalOpen(true);
-                }}
-              >
-                Add User
-              </Button> */}
             </>
           )}
         </div>
@@ -189,12 +177,6 @@ export default function App() {
           onCancel={handleCancelPassword}
         />
       )}
-      {/* {isAddUserModalOpen && (
-        <AddUserModal
-          onAddUser={handleAddUser}
-          onClose={() => setIsAddUserModalOpen(false)}
-        />
-      )} */}
     </div>
   );
 }
