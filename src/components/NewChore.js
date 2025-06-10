@@ -6,10 +6,6 @@ import { chores as choreTemplates } from "./Data";
 function NewChore({ family, onAddChore, onClose }) {
   const [choreType, setChoreType] = useState("");
   const [assignedTo, setAssignedTo] = useState("");
-  const [formData, setFormData] = useState({
-    choreName: choreTemplates[0]?.name,
-    assignedTo: family[0]?.name,
-  });
 
   function handleSubmit(e) {
     e.preventDefault();
