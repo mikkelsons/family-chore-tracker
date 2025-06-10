@@ -21,7 +21,7 @@ Try the live app: [Family Chore Tracker](https://mikkelsons-family-chore-tracker
 ### To Do:
 
 - Update modal window to include options for the following:
-   - adding/deleting users (guard against deleting both parents)
+   - deleting users (guard against deleting both parents)
    - redeeming points (only accesible by parent)
    - changing parent password
 
