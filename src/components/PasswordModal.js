@@ -14,23 +14,22 @@ export default function PasswordModal({ onConfirm, onCancel }) {
   function handleSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
-    const correctPassword = "1111"; // Hardcoded for simplicity
+    const correctPassword = "1111"; // Hardcoded for development
     console.log(`Form submitted with password: ${correctPassword}`);
+    console.log(e);
 
     if (password !== correctPassword) {
       setError(password === "" ? "Password is required" : "Incorrect password");
       return;
     }
-    setTimeout(() => {
-      onConfirm();
-    }, 0);
+    onConfirm();
   }
 
   return (
-    <div className="modal-overlay">
-      <div className="modal">
+    <div className="modal-overlay" onClick={onCancel}>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
         <h2>Parent Login</h2>
-        <form onSubmit={handleSubmit} noValidate>
+        <form onSubmit={handleSubmit}>
           {" "}
           {/* added noValidate because of browser or script validations
           interfering in pressing 'enter' to submit form */}

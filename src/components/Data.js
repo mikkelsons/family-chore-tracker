@@ -5,7 +5,6 @@ export const chores = [
     assignedTo: "Ryan",
     status: "To Do",
     points: 15,
-    category: "Kitchen",
     image: "../../dishes.png",
   },
   {
@@ -14,7 +13,6 @@ export const chores = [
     assignedTo: "Shane",
     status: "To Do",
     points: 20,
-    category: "Yard",
     image: "../../lawn-mower.png",
   },
   {
@@ -23,7 +21,6 @@ export const chores = [
     assignedTo: "Maddy",
     status: "Done",
     points: 10,
-    category: "House",
     image: "../../vacuum.png",
   },
   {
@@ -32,7 +29,6 @@ export const chores = [
     assignedTo: "Ryan",
     status: "Pending",
     points: 10,
-    category: "House",
     image: "../../laundry.png",
   },
 ];
@@ -44,6 +40,7 @@ export const family = [
     image: "https://api.dicebear.com/9.x/thumbs/svg?seed=Dad",
     currentChores: [],
     currentPoints: 0,
+    isAdmin: true,
   },
   {
     id: 2,
@@ -51,6 +48,7 @@ export const family = [
     image: "https://api.dicebear.com/9.x/thumbs/svg?seed=Mom",
     currentChores: [],
     currentPoints: 0,
+    isAdmin: true,
   },
   {
     id: 3,
@@ -77,5 +75,28 @@ export const family = [
       chores.find((chore) => chore.name === "Clean living room").id,
     ],
     currentPoints: 10,
+  },
+];
+
+export const menuOptions = [
+  {
+    id: 1,
+    option: "Add user",
+  },
+  {
+    id: 2,
+    option: "Delete user",
+  },
+  {
+    id: 3,
+    option: "Add chore",
+  },
+  {
+    id: 4,
+    option: "Remove user chore",
+  },
+  {
+    id: 5,
+    option: "Redeem points",
   },
 ];

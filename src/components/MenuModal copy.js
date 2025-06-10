@@ -3,7 +3,7 @@ import Button from "./Button";
 import { chores as choreTemplates } from "./Data";
 import "../Modal.css";
 
-export default function AddChoreModal({ family, onAddChore, onClose }) {
+export default function MenuModal({ family, onAddChore, onClose }) {
   const [formData, setFormData] = useState({
     choreName: choreTemplates[0]?.name,
     assignedTo: family[0]?.name,
@@ -16,6 +16,7 @@ export default function AddChoreModal({ family, onAddChore, onClose }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    e.stopPropagation();
     const template = choreTemplates.find(
       (chore) => chore.name === formData.choreName
     );
@@ -33,8 +34,8 @@ export default function AddChoreModal({ family, onAddChore, onClose }) {
   }
 
   return (
-    <div className="modal-overlay">
-      <div className="modal">
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
         <h2>Add New Chore</h2>
         <form onSubmit={handleSubmit}>
           <label>

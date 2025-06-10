@@ -5,7 +5,7 @@ import UserList from "./UserList";
 import Header from "./Header";
 import Title from "./Title";
 import Button from "./Button";
-import AddChoreModal from "./AddChoreModal";
+import MenuModal from "./MenuModal";
 import PasswordModal from "./PasswordModal";
 // import AddUserModal from "./AddUserModal";
 
@@ -14,14 +14,14 @@ export default function App() {
   const [curOpen, setCurOpen] = useState(null);
   const [chores, setChores] = useState(initialChores);
   const [family, setFamily] = useState(initialFamily);
-  const [isAddChoreModalOpen, setIsAddChoreModalOpen] = useState(false);
+  const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   // const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
   const [pendingUser, setPendingUser] = useState(null);
 
   function handleSwitchUser(familyMember) {
     // If selecting Mom or Dad, open password modal
-    if (familyMember.name === "Mom" || familyMember.name === "Dad") {
+    if (familyMember.isAdmin) {
       setPendingUser(familyMember);
       setIsPasswordModalOpen(true);
     } else {
@@ -93,7 +93,7 @@ export default function App() {
           : member
       )
     );
-    setIsAddChoreModalOpen(false);
+    setIsMenuModalOpen(false);
   }
 
   function handleDeleteChore(choreId) {
@@ -114,6 +114,10 @@ export default function App() {
           : member
       )
     );
+  }
+
+  function handleAddFamilyMember(member) {
+    setFamily((prevFamily) => [...prevFamily, member]);
   }
 
   // function handleAddUser(newUser) {
@@ -138,15 +142,15 @@ export default function App() {
             onMarkAsDone={handleMarkAsDone}
             onDeleteChore={handleDeleteChore}
           />
-          {(currentUser?.name === "Mom" || currentUser?.name === "Dad") && (
+          {currentUser?.isAdmin && (
             <>
               <Button
                 className="button-add"
                 onClick={() => {
-                  setIsAddChoreModalOpen(true);
+                  setIsMenuModalOpen(true);
                 }}
               >
-                Add Chore
+                Menu
               </Button>
               {/* <Button
                 onClick={() => {
@@ -171,11 +175,12 @@ export default function App() {
           />
         </div>
       </div>
-      {isAddChoreModalOpen && (
-        <AddChoreModal
+      {isMenuModalOpen && (
+        <MenuModal
           family={family}
+          onAddFamilyMember={handleAddFamilyMember}
           onAddChore={handleAddChore}
-          onClose={() => setIsAddChoreModalOpen(false)}
+          onClose={() => setIsMenuModalOpen(false)}
         />
       )}
       {isPasswordModalOpen && (
