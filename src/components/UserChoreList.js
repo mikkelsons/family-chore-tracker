@@ -9,13 +9,11 @@ export default function UserChoreList({
   onApprove,
   onDeleteChore,
 }) {
-  const safeChores = Array.isArray(chores) ? chores : [];
-
   return (
     <div className="chore-list">
       <ul>
-        {safeChores.length ? (
-          safeChores.map((chore) => (
+        {chores.length ? (
+          chores.map((chore) => (
             <Chore
               chore={chore}
               family={family}

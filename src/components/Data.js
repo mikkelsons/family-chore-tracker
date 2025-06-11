@@ -46,7 +46,7 @@ export const family = [
     id: 1,
     name: "Dad",
     image: "https://api.dicebear.com/9.x/thumbs/svg?seed=Dad",
-    currentChores: [],
+    currentChores: [chores.find((chore) => chore.name === "Clean Bathroom").id],
     currentPoints: 0,
     isAdmin: true,
   },
