@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  margin: 50px 0 25px 0;
+  margin: 5rem 0 2.5rem 0;
   display: flex;
 }
 
@@ -55,9 +55,44 @@ h1 {
 .app {
   min-height: 66vh;
   display: grid;
-  grid-template-columns: 40rem 60rem;
+  grid-template-columns: 1fr 1.2fr;
   column-gap: 4rem;
   align-items: start;
+}
+
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  html {
+    font-size: 50%;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  .app {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+  }
+  .user-list {
+    min-width: 260px;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 430px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 359px) {
+  html {
+    font-size: 38%;
+  }
 }
 
 .red {
@@ -119,6 +154,10 @@ footer {
   margin: 15px auto;
   border-radius: 10px;
   transition: 0.5s;
+}
+
+.chore-info {
+  min-width: 14rem;
 }
 
 .chore-actions {

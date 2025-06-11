@@ -73,6 +73,15 @@ input {
   border-radius: 5px;
 }
 
+.modal-confirm {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.modal .confirm {
+  font-size: 1.4rem;
+}
+
 .modal-actions {
   display: flex;
   justify-content: flex-end;

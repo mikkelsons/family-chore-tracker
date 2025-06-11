@@ -58,7 +58,7 @@ export default function Chore({
       <div className="chore-image">
         <img src={chore?.image} alt={chore.name} />
       </div>
-      <div>
+      <div className="chore-info">
         <h3>{chore.name}</h3>
         <h4>{chore.status}</h4>
         <p>Points: {chore.points}</p>

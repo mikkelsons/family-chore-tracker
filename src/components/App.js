@@ -121,7 +121,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <main>
       <Header
         currentUser={currentUser}
         onSwitchUser={handleSwitchUser}
@@ -182,6 +182,6 @@ export default function App() {
           onCancel={handleCancelPassword}
         />
       )}
-    </div>
+    </main>
   );
 }
