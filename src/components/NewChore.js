@@ -6,6 +6,7 @@ import { chores as choreTemplates } from "./Data";
 function NewChore({ family, onAddChore, onClose }) {
   const [choreType, setChoreType] = useState("");
   const [assignedTo, setAssignedTo] = useState("");
+  const [points, setPoints] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,7 +17,7 @@ function NewChore({ family, onAddChore, onClose }) {
       name: choreType,
       assignedTo,
       status: "To Do",
-      points: template.points,
+      points: Number(points),
       image: template.image,
     };
     onAddChore(newChore);
@@ -60,6 +61,18 @@ function NewChore({ family, onAddChore, onClose }) {
             </option>
           ))}
         </select>
+      </label>
+      <label>
+        Worth how many points:
+        <input
+          type="number"
+          name="points"
+          value={points}
+          min="0"
+          max="50"
+          onChange={(e) => setPoints(e.target.value)}
+          required
+        ></input>
       </label>
       <div className="modal-actions">
         <Button type="button" onClick={onClose} className="button-delete">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 
-function NewUser({ family, onAddFamilyMember, onCancel }) {
+function NewUser({ onAddFamilyMember, onCancel }) {
   const [newUser, setNewUser] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
 

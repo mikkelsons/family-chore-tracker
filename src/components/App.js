@@ -1,6 +1,7 @@
 import { useState } from "react";
-import ChoreList from "./ChoreList";
 import { chores as initialChores, family as initialFamily } from "./Data";
+
+import ChoreList from "./ChoreList";
 import UserList from "./UserList";
 import Header from "./Header";
 import Title from "./Title";
@@ -15,7 +16,6 @@ export default function App() {
   const [family, setFamily] = useState(initialFamily);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
-  // const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
   const [pendingUser, setPendingUser] = useState(null);
 
   function handleSwitchUser(familyMember) {
@@ -169,6 +169,10 @@ export default function App() {
           onAddFamilyMember={handleAddFamilyMember}
           onAddChore={handleAddChore}
           onClose={() => setIsMenuModalOpen(false)}
+          onSetFamily={setFamily}
+          chores={chores}
+          setChores={setChores}
+          currentUser={currentUser}
         />
       )}
       {isPasswordModalOpen && (

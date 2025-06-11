@@ -1,14 +1,22 @@
 import { useState } from "react";
 import NewUser from "./NewUser";
 import NewChore from "./NewChore";
+import RedeemPoints from "./RedeemPoints";
+import RemoveUserChore from "./RemoveUserChore";
+
 import { menuOptions as options } from "./Data";
 import "../Modal.css";
+import DeleteUser from "./DeleteUser";
 
 export default function MenuModal({
   family,
+  onSetFamily,
   onAddFamilyMember,
   onAddChore,
   onClose,
+  chores,
+  setChores,
+  currentUser,
 }) {
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -40,19 +48,39 @@ export default function MenuModal({
         </label>
 
         {selectedOption === "Add user" && (
-          <NewUser
-            onAddFamilyMember={onAddFamilyMember}
+          <NewUser onAddFamilyMember={onAddFamilyMember} onCancel={onClose} />
+        )}
+        {selectedOption === "Delete user" && (
+          <DeleteUser
             family={family}
-            onCancel={onClose}
+            onSetFamily={onSetFamily}
+            onClose={onClose}
+            chores={chores}
+            setChores={setChores}
+            currentUser={currentUser}
           />
         )}
-
         {selectedOption === "Add chore" && (
           <NewChore
             onAddFamilyMember={onAddFamilyMember}
             family={family}
             onClose={onClose}
             onAddChore={onAddChore}
+          />
+        )}
+        {selectedOption === "Remove user chore" && (
+          <RemoveUserChore
+            chores={chores}
+            setChores={setChores}
+            family={family}
+            onClose={onClose}
+          />
+        )}
+        {selectedOption === "Redeem points" && (
+          <RedeemPoints
+            family={family}
+            onSetFamily={onSetFamily}
+            onClose={onClose}
           />
         )}
       </div>

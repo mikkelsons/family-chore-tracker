@@ -31,6 +31,14 @@ export const chores = [
     points: 10,
     image: "../../laundry.png",
   },
+  {
+    id: crypto.randomUUID(),
+    name: "Clean Bathroom",
+    assignedTo: "Dad",
+    status: "Pending",
+    points: 10,
+    image: "../../chores-generic.png",
+  },
 ];
 
 export const family = [

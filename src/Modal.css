@@ -29,6 +29,10 @@
   text-align: center;
 }
 
+.modal h3 {
+  font-size: 1.6rem;
+}
+
 .modal form {
   display: flex;
   flex-direction: column;
