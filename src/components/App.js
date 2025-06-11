@@ -151,7 +151,7 @@ export default function App() {
             </>
           )}
         </div>
-        <div>
+        <div className="user-list">
           <UserList
             family={family}
             curOpen={curOpen}

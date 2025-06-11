@@ -11,7 +11,7 @@ export default function UserList({
   onDeleteChore,
 }) {
   return (
-    <ul className="user-list">
+    <ul>
       {family.map((familyMember, i) => (
         <User
           familyMember={familyMember}

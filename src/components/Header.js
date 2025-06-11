@@ -4,7 +4,7 @@ export default function Header({ currentUser, onSwitchUser, family }) {
   return (
     <header className="header">
       {family.map((familyMember) => (
-        <div>
+        <div className="user-icon">
           <UserIcon
             currentUser={currentUser}
             familyMember={familyMember}

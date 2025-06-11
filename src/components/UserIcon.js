@@ -3,7 +3,7 @@ export default function UserIcon({ familyMember, currentUser, onSwitchUser }) {
   return (
     <div
       onClick={() => onSwitchUser(familyMember)}
-      className={isActive ? "active" : ""}
+      className={isActive ? "avatar active" : "avatar"}
     >
       <img
         src={familyMember.image}
