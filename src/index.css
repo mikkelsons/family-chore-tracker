@@ -66,9 +66,6 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
-  html {
-    font-size: 50%;
-  }
   h1 {
     font-size: 5rem;
   }
@@ -102,21 +99,26 @@ h1 {
     justify-content: center;
   }
   .user-list {
-    min-width: 260px;
+    width: 326px;
   }
 }
 
-@media (max-width: 564px) {
-  html {
-    font-size: 50%;
-  }
+/* @media (min-width: 565px) and (max-width: 690px) {
+
+} */
+
+@media (max-width: 690px) {
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  h1 {
+    font-size: 4.2rem;
+  }
   .header {
-    align-items: space-evenly;
+    justify-content: space-evenly;
+    gap: 0;
   }
   .sidebar {
     width: 90%;
@@ -128,7 +130,10 @@ h1 {
 
 @media (min-width: 360px) and (max-width: 430px) {
   html {
-    font-size: 50%;
+    font-size: 55%;
+  }
+  h1 {
+    font-size: 4rem;
   }
   main {
     display: flex;
@@ -145,12 +150,7 @@ h1 {
 
 @media (max-width: 359px) {
   html {
-    font-size: 38%;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 50%;
   }
 }
 
