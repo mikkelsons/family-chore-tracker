@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { chores as initialChores, family as initialFamily } from "./Data";
+import { useLocalStorageState } from "./useLocalStorageState";
 
 import ChoreList from "./ChoreList";
 import UserList from "./UserList";
@@ -10,10 +11,10 @@ import MenuModal from "./MenuModal";
 import PasswordModal from "./PasswordModal";
 
 export default function App() {
+  const [chores, setChores] = useLocalStorageState(initialChores, "chores");
+  const [family, setFamily] = useLocalStorageState(initialFamily, "family");
   const [currentUser, setCurrentUser] = useState(null);
   const [curOpen, setCurOpen] = useState(null);
-  const [chores, setChores] = useState(initialChores);
-  const [family, setFamily] = useState(initialFamily);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [pendingUser, setPendingUser] = useState(null);

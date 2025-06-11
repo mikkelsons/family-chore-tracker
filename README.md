@@ -20,6 +20,8 @@ Try the live app: [Family Chore Tracker](https://mikkelsons-family-chore-tracker
 
 ### To Do:
 
+- The app currently saves state to local storage, but it should eventually move to a proper database
+
 - Update modal window to include options for the following:
   - changing parent password
 
